@@ -2,6 +2,7 @@ package net.lecnam.ussi2a.tp5;
 
 import org.w3c.dom.css.Rect;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exec {
@@ -12,15 +13,14 @@ public class Exec {
 
         Rectangle r = new Rectangle(2,3,1.2,9);
         Rectangle r2 = new Rectangle(2,4,0,0);
+        Point p = new Point(1,2);
+        Disque d = new Disque(p,5);
 
         dessin.ajout(r);
         dessin.ajout(r2);
+        dessin.ajout(d);
 
         System.out.println(dessin.retournePlusGrand());
-
-        Point p = new Point(1,2);
-
-        Disque d = new Disque(p,5);
 
         d.translate(3,4);
 
