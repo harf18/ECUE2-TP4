@@ -1,40 +1,59 @@
 package net.lecnam.ussi2a.tp5;
 
 
-public class Rectangle {
+public class Rectangle extends Figure implements Inclinable {
 
     double longueur;
     double largeur;
     Point point;
+    double angle;
 
 
     Rectangle(double longueur, double largeur, Point point) {
         this.longueur = longueur;
         this.largeur = largeur;
         this.point = point;
+        this.angle = 0;
     }
 
     Rectangle(double longueur, double largeur, double x, double y) {
-        this(longueur, largeur, new Point(x, y));
+        this.longueur = longueur;
+        this.largeur = largeur;
+        this.point = new Point(x, y);
+        this.angle = 0;
     }
 
+    Rectangle(double longueur, double largeur, double x, double y, double angle) {
+        this.longueur = longueur;
+        this.largeur = largeur;
+        this.point = new Point(x, y);
+        this.angle = angle;
+    }
+
+    @Override
     double retourneSurface(){
         return this.longueur *this.largeur;
     }
 
+    @Override
     double retournePerimetre(){
         return 2 * (this.longueur + this.largeur);
     }
 
+    @Override
     void translate(double x, double y){
         this.point.translate(x,y);
     }
 
-    boolean contient(Point point){
-        return point.x >= this.point.x
-                && point.x <= this.point.x+ longueur
-                && point.y >= this.point.y
-                && point.y <= this.point.y+largeur;
+    @Override
+    boolean contient(Point point) {
+        double a = Math.toRadians(this.angle);
+        double dx = point.x - this.point.x;
+        double dy = point.y - this.point.y;
+        double rotx =  dx * Math.cos(a) + dy * Math.sin(a);
+        double roty = -dx * Math.sin(a) + dy * Math.cos(a);
+        return 0 <= rotx && rotx <= this.longueur
+                && 0 <= roty && roty <= this.largeur;
     }
 
     @Override
@@ -52,7 +71,18 @@ public class Rectangle {
                 ", largeur=" + largeur +
                 ", point=" + point +
                 ", surface=" + this.retourneSurface() +
+                ", angle=" + this.angle +
                 '}';
+    }
+
+    @Override
+    public double getAngle(){
+        return this.angle;
+    }
+
+    @Override
+    public void pivoter(double degres){
+        this.angle += degres;
     }
 
 
