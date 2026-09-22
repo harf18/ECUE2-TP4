@@ -15,16 +15,21 @@ public class Exec {
         Rectangle r2 = new Rectangle(2,4,0,0);
         Point p = new Point(1,2);
         Disque d = new Disque(p,5);
+        Triangles t = new Triangles(new Point(1,2), new Point(4,5), new Point(8,7));
 
         dessin.ajout(r);
         dessin.ajout(r2);
         dessin.ajout(d);
+        dessin.ajout(t);
 
         System.out.println(dessin.retourneSurfaceTotale());
 
         System.out.println(dessin.retournePlusGrand());
 
         System.out.println(dessin.contient(p));
+
+        System.out.println(t.retourneSurface());
+        System.out.println(t.retournePerimetre());
 
     }
 
