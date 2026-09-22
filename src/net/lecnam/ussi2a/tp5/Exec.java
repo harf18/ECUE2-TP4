@@ -18,7 +18,17 @@ public class Exec {
 
         System.out.println(dessin.retournePlusGrand());
 
+        // Test du disque
+        Disk d = new Disk(2, 3, 5);
+
+        System.out.println(d);
+        System.out.println("Surface : " + d.retourneSurface());
+        System.out.println("Périmètre : " + d.retournePerimetre());
+
+        Point p = new Point(4, 3);
+        System.out.println("Le point est dans le disque : " + d.contient(p));
+
+        d.translate(2, 1);
+        System.out.println("Après translation : " + d);
     }
-
-
 }
