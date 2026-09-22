@@ -20,6 +20,7 @@ public class Exec {
         Triangles t3 = new Triangles(new Point(38,45), new Point(58,65), new Point(78,85));
         RectangleIncline r3 = new RectangleIncline(2,4,5,7,50);
         RectangleIncline r4 = new RectangleIncline(6,4,10,2,140);
+        Carre c = new Carre(5, new Point(1,2));
 
 
         dessin.ajout(r);
@@ -30,6 +31,7 @@ public class Exec {
         dessin.ajout(t3);
         dessin.ajout(r3);
         dessin.ajout(r4);
+        dessin.ajout(c);
 
         System.out.println(r3.contient(p));
 
@@ -41,6 +43,8 @@ public class Exec {
 
         System.out.println(t.retourneSurface());
         System.out.println(t.retournePerimetre());
+
+        System.out.println(c.contient(new Point(1,2)));
 
     }
 
