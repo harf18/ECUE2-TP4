@@ -12,6 +12,7 @@ public class Exec {
 
         Rectangle r = new Rectangle(2,3,1.2,9);
         Rectangle r2 = new Rectangle(2,4,0,0);
+        Rectangle r3 = new RectangleIncline(25,20,14, 5,18);
 
         dessin.ajout(r);
         dessin.ajout(r2);
@@ -32,6 +33,7 @@ public class Exec {
         dess.ajout(r2);
         dess.ajout(d);
         dess.ajout(t);
+        dess.ajout(r3);
 
         System.out.println(dess.retourneSurfaceTotale());
         System.out.println(dess.retournePlusGrand());

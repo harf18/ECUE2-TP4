@@ -27,7 +27,7 @@ public class RectangleIncline extends Rectangle{
 
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "RectangleIncline{" +
                 "longeur=" + longueur +
                 ", largeur=" + largeur +
                 ", point=" + point +
