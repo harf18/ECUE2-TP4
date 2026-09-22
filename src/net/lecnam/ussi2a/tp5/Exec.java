@@ -25,10 +25,13 @@ public class Exec {
         System.out.println(d.contient(new Point(5, 6)));
         System.out.println(d.toString());
 
+        Triangle t = new Triangle(new Point(1, 4), new Point(20, 5), new Point(0, 10));
+
         Dessin dess = new Dessin();
         dess.ajout(r);
         dess.ajout(r2);
         dess.ajout(d);
+        dess.ajout(t);
 
         System.out.println(dess.retourneSurfaceTotale());
         System.out.println(dess.retournePlusGrand());

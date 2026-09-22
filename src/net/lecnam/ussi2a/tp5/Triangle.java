@@ -36,4 +36,8 @@ public class Triangle extends Figure{
         return this.retourneSurface() == t1.retourneSurface() + t2.retourneSurface() + t3.retourneSurface();
     }
 
+    public String toString(){
+        return "Le tirangle a une surface de " + this.retourneSurface() + " et un pérmiètre de " +this.retournePerimetre();
+    }
+
 }
