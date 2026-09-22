@@ -51,4 +51,13 @@ public class Triangles extends Figure {
         double sommeAires = t1.retourneSurface() + t2.retourneSurface() + t3.retourneSurface();
         return Math.abs(aireTotale - sommeAires) < 0;
     }
+
+    @Override
+    public String toString() {
+        return "Triangles{" +
+                "point1=" + point1 +
+                ", point2=" + point2 +
+                ", point3=" + point3 +
+                '}';
+    }
 }

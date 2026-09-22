@@ -32,4 +32,14 @@ public class Rectangle extends Figure {
         return p.x >= this.x && p.x <= (this.x + this.largeur) &&
                 p.y >= this.y && p.y <= (this.y + this.hauteur);
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "x=" + x +
+                ", y=" + y +
+                ", largeur=" + largeur +
+                ", hauteur=" + hauteur +
+                '}';
+    }
 }

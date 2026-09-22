@@ -31,4 +31,12 @@ public class Disque extends Figure {
         double dy = p.y - this.centre.y;
         return (dx * dx + dy * dy) <= (this.rayon * this.rayon);
     }
+
+    @Override
+    public String toString() {
+        return "Disque{" +
+                "centre=" + centre +
+                ", rayon=" + rayon +
+                '}';
+    }
 }
