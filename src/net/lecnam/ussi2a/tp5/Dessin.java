@@ -2,75 +2,57 @@ package net.lecnam.ussi2a.tp5;
 
 public class Dessin {
 
-    Rectangle[] figures = new Rectangle[100];
-    int nbFigures = 0;
+    private Figure[] figures = new Figure[20];
+    private int nombreFigures = 0;
 
-    void ajout(Rectangle figure){
-        figures[nbFigures]=figure;
-        nbFigures++;
-    }
+    public boolean ajout(Figure figure) {
 
-    double retourneSurfaceTotale(){
-        double total = 0;
-        for (Rectangle fig: figures) {
-            if (fig == null) {
-                break;
-            }
-            total += fig.retourneSurface();
-        }
-        return total;
-    }
-
-    double retournePerimetreTotale(){
-        double total = 0;
-        for (Rectangle fig: figures) {
-            if (fig == null) {
-                break;
-            }
-            total += fig.retournePerimetre();
-        }
-        return total;
-    }
-
-    void translate(double x, double y){
-
-        for (Rectangle fig : figures) {
-            if (fig == null) {
-                break;
-            }
-            fig.translate(x, y);
+        if (nombreFigures >= figures.length) {
+            return false;
         }
 
+        figures[nombreFigures] = figure;
+        nombreFigures++;
+
+        return true;
     }
 
+    public Figure retournePlusGrand() {
 
-    boolean contient(Point p){
+        if (nombreFigures == 0) {
+            return null;
+        }
 
-        for (Rectangle fig : figures) {
-            if (fig == null) {
-                break;
+        Figure plusGrande = figures[0];
+
+        for (int i = 1; i < nombreFigures; i++) {
+
+            if (figures[i].retourneSurface() > plusGrande.retourneSurface()) {
+                plusGrande = figures[i];
             }
-            if (fig.contient(p)) {
+        }
+
+        return plusGrande;
+    }
+    public double retourneSurfaceTotale() {
+
+        double surfaceTotale = 0;
+
+        for (int i = 0; i < nombreFigures; i++) {
+            surfaceTotale += figures[i].retourneSurface();
+        }
+
+        return surfaceTotale;
+    }
+
+    public boolean contient(Point point) {
+
+        for (int i = 0; i < nombreFigures; i++) {
+            if (figures[i].contient(point)) {
                 return true;
             }
         }
+
         return false;
-
     }
-
-
-    Rectangle retournePlusGrand(){
-        Rectangle plusGrand = null;
-        for (Rectangle fig : figures){
-            if (fig == null) {
-                break;
-            }
-            if(plusGrand == null || plusGrand .retourneSurface() < fig.retourneSurface()){
-                plusGrand = fig;
-            }
-        }
-        return plusGrand;
-    }
-
-
 }
