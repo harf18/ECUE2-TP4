@@ -23,7 +23,7 @@ public class Triangle extends Figure{
     }
 
     double retournePerimetre(){
-        return longueurCote(point1,point2) + longueurCote(point1,point2) + longueurCote(point2,point3);
+        return longueurCote(point1,point2) + longueurCote(point1,point3) + longueurCote(point2,point3);
     }
 
     double retourneSurface(){
@@ -36,7 +36,10 @@ public class Triangle extends Figure{
         Triangle triangle2 = new Triangle(point1,point3,point);
         Triangle triangle3 = new Triangle(point2,point3,point);
         Triangle triangle4 = new Triangle(point1,point2,point3);
-        return (triangle1.retourneSurface()+triangle2.retourneSurface()+triangle3.retourneSurface()==triangle4.retourneSurface());
+        Double sommeSurfaceTrianglePoint = triangle1.retourneSurface() + triangle2.retourneSurface() + triangle3.retourneSurface();
+        Double surfaceTriangleOrigine = triangle4.retourneSurface();
+        // return (triangle1.retourneSurface()+triangle2.retourneSurface()+triangle3.retourneSurface()=(triangle4.retourneSurface()));
+        return Math.abs(surfaceTriangleOrigine-sommeSurfaceTrianglePoint) < 1e-9;
     }
 
     @Override
