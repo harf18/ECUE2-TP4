@@ -1,59 +1,72 @@
 package net.lecnam.ussi2a.tp5;
 
+public class Rectangle extends Figure implements Inclinable {
+    double x, y;
+    double largeur, hauteur;
+    private int angle = 0;
 
-public class Rectangle {
+    public Rectangle(double x, double y, double largeur, double hauteur) {
+        this(x, y, largeur, hauteur, 0);
+    }
 
-    double longueur;
-    double largeur;
-    Point point;
-
-
-    Rectangle(double longueur, double largeur, Point point) {
-        this.longueur = longueur;
+    public Rectangle(double x, double y, double largeur, double hauteur, int angle) {
+        this.x = x;
+        this.y = y;
         this.largeur = largeur;
-        this.point = point;
-    }
-
-    Rectangle(double longueur, double largeur, double x, double y) {
-        this(longueur, largeur, new Point(x, y));
-    }
-
-    double retourneSurface(){
-        return this.longueur *this.largeur;
-    }
-
-    double retournePerimetre(){
-        return 2 * (this.longueur + this.largeur);
-    }
-
-    void translate(double x, double y){
-        this.point.translate(x,y);
-    }
-
-    boolean contient(Point point){
-        return point.x >= this.point.x
-                && point.x <= this.point.x+ longueur
-                && point.y >= this.point.y
-                && point.y <= this.point.y+largeur;
+        this.hauteur = hauteur;
+        this.angle = angle;
     }
 
     @Override
-    public boolean equals(Object object){
-        Rectangle rectangle = (Rectangle) object;
-        return this.point.equals(rectangle.point)
-                && this.longueur == rectangle.longueur
-                && this.largeur == rectangle.largeur;
+    public int getAngle() {
+        return angle;
+    }
+
+    @Override
+    public void setAngle(int angle) {
+        this.angle = angle;
+    }
+
+    @Override
+    double retourneSurface() {
+        return largeur * hauteur;
+    }
+
+    @Override
+    double retournePerimetre() {
+        return 2 * (largeur + hauteur);
+    }
+
+    @Override
+    void translate(double dx, double dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+
+    @Override
+    boolean contient(Point p) {
+        if (angle == 0) {
+            return p.x >= this.x && p.x <= (this.x + this.largeur) &&
+                    p.y >= this.y && p.y <= (this.y + this.hauteur);
+        } else {
+            double a = Math.toRadians(this.angle);
+            double dx = x - this.x;
+            double dy = y - this.y;
+            double rotx =  dx * Math.cos(a) + dy * Math.sin(a);
+            double roty = -dx * Math.sin(a) + dy * Math.cos(a);
+            return 0 <= rotx && rotx <= this.hauteur
+                    && 0 <= roty && roty <= this.largeur;
+        }
     }
 
     @Override
     public String toString() {
         return "Rectangle{" +
-                "longeur=" + longueur +
+                "x=" + x +
+                ", y=" + y +
                 ", largeur=" + largeur +
-                ", point=" + point +
-                ", surface=" + this.retourneSurface() +
+                ", hauteur=" + hauteur +
+                ", angle=" + angle +
                 '}';
     }
-
-
 }
