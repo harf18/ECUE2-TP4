@@ -1,12 +1,10 @@
 package net.lecnam.ussi2a.tp5;
 
-
-public class Rectangle {
+public class Rectangle extends Figure {
 
     double longueur;
     double largeur;
     Point point;
-
 
     Rectangle(double longueur, double largeur, Point point) {
         this.longueur = longueur;
@@ -18,28 +16,33 @@ public class Rectangle {
         this(longueur, largeur, new Point(x, y));
     }
 
-    double retourneSurface(){
-        return this.longueur *this.largeur;
-    }
-
-    double retournePerimetre(){
-        return 2 * (this.longueur + this.largeur);
-    }
-
-    void translate(double x, double y){
-        this.point.translate(x,y);
-    }
-
-    boolean contient(Point point){
-        return point.x >= this.point.x
-                && point.x <= this.point.x+ longueur
-                && point.y >= this.point.y
-                && point.y <= this.point.y+largeur;
+    @Override
+    double retourneSurface() {
+        return this.longueur * this.largeur;
     }
 
     @Override
-    public boolean equals(Object object){
+    double retournePerimetre() {
+        return 2 * (this.longueur + this.largeur);
+    }
+
+    @Override
+    void translate(double x, double y) {
+        this.point.translate(x, y);
+    }
+
+    @Override
+    boolean contient(Point point) {
+        return point.x >= this.point.x
+                && point.x <= this.point.x + longueur
+                && point.y >= this.point.y
+                && point.y <= this.point.y + largeur;
+    }
+
+    @Override
+    public boolean equals(Object object) {
         Rectangle rectangle = (Rectangle) object;
+
         return this.point.equals(rectangle.point)
                 && this.longueur == rectangle.longueur
                 && this.largeur == rectangle.largeur;
@@ -54,6 +57,4 @@ public class Rectangle {
                 ", surface=" + this.retourneSurface() +
                 '}';
     }
-
-
 }

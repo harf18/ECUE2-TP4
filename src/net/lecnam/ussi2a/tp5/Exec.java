@@ -1,34 +1,29 @@
 package net.lecnam.ussi2a.tp5;
 
-import org.w3c.dom.css.Rect;
-
-import java.util.Scanner;
-
 public class Exec {
 
     static Dessin dessin = new Dessin();
 
     public static void main(String[] args) {
 
-        Rectangle r = new Rectangle(2,3,1.2,9);
-        Rectangle r2 = new Rectangle(2,4,0,0);
+        Rectangle r1 = new Rectangle(2, 3, 1, 1);
+        Rectangle r2 = new Rectangle(4, 5, 2, 3);
 
-        dessin.ajout(r);
+        Disk d1 = new Disk(5, 5, 3);
+        Disk d2 = new Disk(10, 10, 2);
+
+        dessin.ajout(r1);
         dessin.ajout(r2);
+        dessin.ajout(d1);
+        dessin.ajout(d2);
 
-        System.out.println(dessin.retournePlusGrand());
+        System.out.println("Surface totale : " + dessin.retourneSurfaceTotale());
 
-        // Test du disque
-        Disk d = new Disk(2, 3, 5);
+        System.out.println("Plus grande figure : " + dessin.retournePlusGrand());
 
-        System.out.println(d);
-        System.out.println("Surface : " + d.retourneSurface());
-        System.out.println("Périmètre : " + d.retournePerimetre());
+        Point p = new Point(3, 3);
 
-        Point p = new Point(4, 3);
-        System.out.println("Le point est dans le disque : " + d.contient(p));
-
-        d.translate(2, 1);
-        System.out.println("Après translation : " + d);
+        System.out.println("Le point " + p + " est dans une figure : "
+                + dessin.contient(p));
     }
 }
