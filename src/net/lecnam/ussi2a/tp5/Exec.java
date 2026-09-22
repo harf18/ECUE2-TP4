@@ -55,6 +55,8 @@ public class Exec {
 
         System.out.println(dessin.contient(p3));
         System.out.println(dessin.contient(p4));
+
+        // pas besoin de modifier la classe dessin - on peut déjà ajouter un rectangle incliné au dessin
     }
 
 
