@@ -5,12 +5,12 @@ public class Disque extends Figure {
     Point centre;
     double rayon;
 
-    public Disque(Point p, double r){
+    Disque(Point p, double r){
         this.centre = p;
         this.rayon = r;
     }
 
-    public Disque(double x, double y, double r){
+    Disque(double x, double y, double r){
         this.centre = new Point(x, y);
         this.rayon = r;
     }
