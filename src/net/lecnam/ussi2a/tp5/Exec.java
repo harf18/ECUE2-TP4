@@ -35,9 +35,21 @@ public class Exec {
             ));
         }
 
-        System.out.println("Surface totale : " + dessin.retourneSurfaceTotale());
+        for (int i = 0; i < 10; i++) {
+            dessin.ajout(new RectangleIncline(
+                    (int)(Math.random() * 10) + 1,
+                    (int)(Math.random() * 10) + 1,
+                    (int)(Math.random() * 15) + 1,
+                    (int)(Math.random() * 15) + 1,
+                    (int)(Math.random() * 360)
+            ));
+        }
 
-        System.out.println("Plus grande figure : " + dessin.retournePlusGrand());
+        Carre c1 = new Carre(5, 2, 3);
+
+        dessin.ajout(c1);
+
+        System.out.println(c1);
 
         // Ajout de toutes les figures
         dessin.ajout(r1);
@@ -72,5 +84,17 @@ public class Exec {
         System.out.println("Le point " + p
                 + " est dans une figure : "
                 + dessin.contient(p));
+
+
+        RectangleIncline r3 = new RectangleIncline(5, 3, 2, 4, 45);
+
+        dessin.ajout(r3);
+
+        System.out.println(r3);
+
+        Point p2 = new Point(2, 5);
+        System.out.println("Le point est dans le rectangle incliné : "
+                + r3.contient(p2));
     }
+
 }
