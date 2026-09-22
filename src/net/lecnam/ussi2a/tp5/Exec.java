@@ -25,6 +25,8 @@ public class Exec {
         System.out.println(d.contient(new Point(5, 6)));
         System.out.println(d.toString());
 
+        
+
     }
 
 

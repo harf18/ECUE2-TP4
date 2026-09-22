@@ -1,6 +1,6 @@
 package net.lecnam.ussi2a.tp5;
 
-public class Disque {
+public class Disque extends Figure {
 
     Point centre;
     double rayon;
@@ -15,20 +15,24 @@ public class Disque {
         this.rayon = r;
     }
 
-    public void translate(double x, double y){
+    @Override
+    void translate(double x, double y){
         this.centre.x += x;
         this.centre.y += y;
     }
 
-    public double retourneSurface(){
+    @Override
+    double retourneSurface(){
         return Math.PI * this.rayon * this.rayon;
     }
 
-    public double retournePerimetre(){
+    @Override
+    double retournePerimetre(){
         return Math.PI * this.rayon * 2;
     }
 
-    public boolean contient(Point p){
+    @Override
+    boolean contient(Point p){
         double x = this.centre.x - p.x;
         double y = this.centre.y - p.y;
         return this.rayon > Math.sqrt(x*x + y*y);
