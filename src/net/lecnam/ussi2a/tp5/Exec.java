@@ -20,17 +20,11 @@ public class Exec {
         dessin.ajout(r2);
         dessin.ajout(d);
 
+        System.out.println(dessin.retourneSurfaceTotale());
+
         System.out.println(dessin.retournePlusGrand());
 
-        d.translate(3,4);
-
-        System.out.println(d.retourneSurface());
-
-        System.out.println(d.retournePerimetre());
-
-        System.out.println(d.contient(p));
-
-        System.out.println(d.toString());
+        System.out.println(dessin.contient(p));
 
     }
 

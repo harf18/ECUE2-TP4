@@ -1,5 +1,7 @@
 package net.lecnam.ussi2a.tp5;
 
+import java.util.Arrays;
+
 public class Dessin {
 
     Figure[] figures = new Figure[100];
@@ -66,5 +68,13 @@ public class Dessin {
             }
         }
         return plusGrand;
+    }
+
+    @Override
+    public String toString() {
+        return "Dessin{" +
+                "figures=" + Arrays.toString(figures) +
+                ", nbFigures=" + nbFigures +
+                '}';
     }
 }
