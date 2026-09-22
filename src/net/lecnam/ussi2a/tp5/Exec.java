@@ -32,7 +32,7 @@ public class Exec {
         System.out.println("p1 est il dans t1 ? : " + t1.contient(p1));
         System.out.println("p2 est il dans t1 ? : " + t1.contient(p2));
         */
-
+        /*
         Triangle t1 = new Triangle(new Point(0,0), new Point(4,0), new Point(0,3));
         Triangle t2 = new Triangle(new Point(2,1), new Point(1,0), new Point(6,5));
         Triangle t3 = new Triangle(new Point(1,3), new Point(2,2), new Point(1,1));
@@ -44,6 +44,17 @@ public class Exec {
         System.out.println("surface total du dessin : " + dessin.retourneSurfaceTotale());
 
         System.out.println("plus grand triangle du dessin : " + dessin.retournePlusGrand());
+        */
+
+        RectangleIncline ri1 = new RectangleIncline(2,3,0,0, 15);
+
+        dessin.ajout(ri1);
+
+        Point p3 = new Point(1, 2);   // proche du centre, devrait être dedans même incliné
+        Point p4 = new Point(1.9, 0.1); // proche du bord "droit" non-incliné → à vérifier si ça reste dedans après rotation
+
+        System.out.println(dessin.contient(p3));
+        System.out.println(dessin.contient(p4));
     }
 
 
