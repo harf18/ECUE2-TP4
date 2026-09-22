@@ -32,6 +32,8 @@ public class Exec {
 //        System.out.println("Perimetre du disque : " + d1.retournePerimetre());
 //        System.out.println("Contient un point : " + d1.contient(new Point(1,2)));
 //        System.out.println("Méthode to string : "+ d1.toString());
+
+
     }
 
 
