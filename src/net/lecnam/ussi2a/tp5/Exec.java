@@ -18,6 +18,11 @@ public class Exec {
 
         System.out.println(dessin.retournePlusGrand());
 
+        Disque d1 = new Disque(3,new Point(1,1));
+        d1.translate(1,1);
+        System.out.println("Surface disque :" + d1.retourneSurface());
+        System.out.println("Perimetre du disque : " + d1.retournePerimetre());
+        System.out.println("Méthode to string : "+ d1.toString());
     }
 
 
