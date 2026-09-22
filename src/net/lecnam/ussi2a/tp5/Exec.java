@@ -18,6 +18,20 @@ public class Exec {
 
         System.out.println(dessin.retournePlusGrand());
 
+        Point p = new Point(1,2);
+
+        Disque d = new Disque(p,5);
+
+        d.translate(3,4);
+
+        System.out.println(d.retourneSurface());
+
+        System.out.println(d.retournePerimetre());
+
+        System.out.println(d.contient(p));
+
+        System.out.println(d.toString());
+
     }
 
 
