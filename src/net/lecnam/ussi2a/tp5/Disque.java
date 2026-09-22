@@ -1,28 +1,26 @@
 package net.lecnam.ussi2a.tp5;
 
 
-public class Disque {
+public class Disque extends Figure {
 
     Double rayon;
-    Point point;
 
     Disque(double rayon, Point point) {
+        super(point);
         this.rayon = rayon;
-        this.point = point;
     }
 
-    void translate(double x, double y){
-        this.point.translate(x,y);
-    }
-
+    @Override
     double retourneSurface(){
         return Math.PI * this.rayon * this.rayon;
     }
 
+    @Override
     double retournePerimetre(){
         return 2 * Math.PI * this.rayon;
     }
 
+    @Override
     boolean contient(Point point){
         double dx = point.x - this.point.x;
         double dy = point.y - this.point.y;
@@ -31,7 +29,7 @@ public class Disque {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "Disque{" +
                 "rayon=" + rayon +
                 ", point=" + point +
                 ", surface=" + this.retourneSurface() +
