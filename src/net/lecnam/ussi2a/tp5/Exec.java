@@ -18,6 +18,12 @@ public class Exec {
 
         System.out.println(dessin.retournePlusGrand());
 
+        Disque disque = new Disque(new Point(3,3),5);
+        boolean estDans = disque.contient(new Point(2,3));
+        System.out.println(disque);
+        System.out.printf("est dans disque:%b\n",estDans);
+
+
     }
 
 
