@@ -19,6 +19,8 @@ public class Exec {
         Triangles t2 = new Triangles(new Point(8,10), new Point(15,17), new Point(25,27));
         Triangles t3 = new Triangles(new Point(38,45), new Point(58,65), new Point(78,85));
         RectangleIncline r3 = new RectangleIncline(2,4,5,7,50);
+        RectangleIncline r4 = new RectangleIncline(6,4,10,2,140);
+
 
         dessin.ajout(r);
         dessin.ajout(r2);
@@ -27,6 +29,7 @@ public class Exec {
         dessin.ajout(t2);
         dessin.ajout(t3);
         dessin.ajout(r3);
+        dessin.ajout(r4);
 
         System.out.println(r3.contient(p));
 
