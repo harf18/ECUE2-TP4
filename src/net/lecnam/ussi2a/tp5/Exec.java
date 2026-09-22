@@ -16,6 +16,8 @@ public class Exec {
         Disque d2 = new Disque(3,new Point(2,1));
         Triangle t1 = new Triangle(new Point(1,3),new Point(3,4),new Point(2,7));
         Triangle t2 = new Triangle(new Point(3,3),new Point(12,3),new Point(4,15));
+        RectangleIncline ri1 = new RectangleIncline(r1,12);
+        RectangleIncline ri2 = new RectangleIncline(3,4,3,2,50);
 
         dessin.ajout(r1);
         dessin.ajout(r2);
@@ -23,6 +25,8 @@ public class Exec {
         dessin.ajout(d2);
         dessin.ajout(t1);
         dessin.ajout(t2);
+        dessin.ajout(ri1);
+        dessin.ajout(ri2);
 
         System.out.println("Surface totale dessins : " + dessin.retourneSurfaceTotale());
         System.out.println("Plus grande figure " + dessin.retournePlusGrand().toString() + "\n avec une surface de : " + dessin.retournePlusGrand().retourneSurface());
