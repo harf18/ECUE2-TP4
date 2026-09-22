@@ -24,7 +24,7 @@ public class Disque {
     }
 
     public boolean contient(Point p){
-        return (p.x >= centre.x-rayon && p.x <= centre.x+rayon) && (p.y >= centre.y-rayon && p.y <= centre.y+rayon);
+        return (p.retourneDistance(centre) <= rayon);
     }
 
     @Override
