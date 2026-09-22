@@ -25,7 +25,14 @@ public class Exec {
         System.out.println(d.contient(new Point(5, 6)));
         System.out.println(d.toString());
 
-        
+        Dessin dess = new Dessin();
+        dess.ajout(r);
+        dess.ajout(r2);
+        dess.ajout(d);
+
+        System.out.println(dess.retourneSurfaceTotale());
+        System.out.println(dess.retournePlusGrand());
+        System.out.println(dess.contient(new Point(4, 7)));
 
     }
 
