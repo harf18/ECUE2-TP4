@@ -49,6 +49,12 @@ public class Exec {
         System.out.println(dessin.retournePlusGrand());
 
         System.out.println(f10.contient(p1));
+
+        Figure f11 = new Carre(4,0,0);
+        Figure f12 = new Carre(6,2,2);
+
+        System.out.println(f11.contient(p1));
+        System.out.println(f11);
     }
 
 
